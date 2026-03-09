@@ -1,49 +1,77 @@
-# Cooked this Paperfolio template with V0 | Here’s the template you can use for free
+# 个人网站（Next.js）
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://v0.link/nikhil-shukla)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.link/paperfolio)
+这是一个基于 Next.js App Router 构建的个人网站项目，包含首页、关于我、作品集三个独立页面。  
+整体风格为高对比、黑边框、贴纸感与卡片化布局，适合用于个人简历展示与项目作品呈现。
 
-![Paperfolio Template Preview](https://global.discourse-cdn.com/vercel/original/2X/e/e8a5d554ecf92e4adb4a718138c60ad7e0c7510e.png)
+## 页面结构
 
-I’ve been experimenting with **V0 - by Vercel**, and I rebuilt the popular **Paperfolio** layout originally created by **Brix Templates**.
-This is a community-made clone — all ownership of the original design stays with @brixtemplatesbrixtemplates.
-My goal was simply to recreate it in V0 so anyone can use or remix it.
+- `/`：首页（个人主视觉与身份介绍）
+- `/about`：关于我（教育背景、近期动态、成长轨迹等）
+- `/portfolio`：作品页（作品图片、名称、简述与跳转链接）
 
----
+## 技术栈
 
-## Live Demo & Template Access
+- Next.js 15（App Router）
+- React 19 + TypeScript
+- Tailwind CSS 4
+- Lucide React 图标
 
-**→  Template (Clone / Remix):** https://v0.link/paperfolio
+## 本地运行
 
-**→  Live Preview:** https://v0-paperfolio.vercel.app
+### 1) 安装依赖
 
----
+```bash
+npm install
+```
 
-## Video Walkthrough
+### 2) 启动开发环境
 
-**→ Watch the walkthrough on X:**
-[https://x.com/i/status/1994130537464910310](https://x.com/i/status/1994130537464910310)
+```bash
+npm run dev
+```
 
----
+默认访问地址：`http://localhost:3000`
 
-## What’s Inside the Template
+### 3) 生产构建与启动
 
-* Clean portfolio with hero section and highlight-style text blocks
-* Minimal, bold layout focused on showcasing your work
-* Reusable components built directly in V0
-* Easy to customize for personal portfolios or client sites
+```bash
+npm run build
+npm run start
+```
 
----
+## 常用脚本
 
-## How to Use It
+- `npm run dev`：开发模式
+- `npm run build`：生产构建
+- `npm run start`：运行生产构建
+- `npm run lint`：代码检查
 
-1. Open the template → https://v0.link/paperfolio
-2. Click on “Open in V0”
-3. Make your styling tweaks
-4. Deploy on Vercel
+## 自定义指南
 
-That’s it — you have a clean, modern portfolio site ready to ship.
+你通常只需要修改以下文件：
 
----
+- `components/hero-section.tsx`：首页文案与主视觉
+- `components/about-section.tsx`：关于页内容与模块样式
+- `components/portfolio-section.tsx`：作品列表（图片、标题、简介、跳转链接）
+- `components/navigation.tsx`：导航菜单与路由入口
 
-If you end up customizing this, I’d like to see what you build.
+### 作品数据修改示例
+
+在 `components/portfolio-section.tsx` 中维护作品数组，可直接替换：
+
+- `title`：作品名称
+- `description`：作品简述
+- `image`：作品图片路径（建议放在 `public/images/`）
+- `href`：点击卡片跳转地址
+
+## 部署建议
+
+可部署到 Vercel、Netlify 或自托管环境。以 Vercel 为例：
+
+1. 将仓库推送到 GitHub
+2. 在 Vercel 导入该仓库
+3. 保持默认构建命令（`npm run build`）并部署
+
+## 许可证
+
+仅用于个人展示与学习参考。如需商用，请自行检查素材与图片版权。

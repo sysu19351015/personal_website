@@ -26,8 +26,8 @@ export function HeroSection() {
           </h1>
 
           <p className="text-[#393939] text-[16px] md:text-[18px] font-medium leading-[28px] md:leading-[30px] max-w-xl">
-            我的研究方向是图像目标检测，具备产品设计、用户研究与 AI Agent 设计能力。
-            目前聚焦 AIGC、RAG、Agent 场景下的产品落地与数据驱动迭代。
+            我具备产品设计、用户研究与 AI Agent 设计能力，有过两段产品实习经历，期待未来能在AI产品经理方向继续深耕。
+            目前聚焦 AIGC、Agent 场景下的产品落地与数据驱动迭代。这个网页由我基于AIcoding制作。
           </p>
 
           <div className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-7 pt-4">

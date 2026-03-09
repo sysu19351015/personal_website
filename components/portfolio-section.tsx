@@ -3,25 +3,16 @@ import Image from "next/image"
 export function PortfolioSection() {
   const projects = [
     {
-      title: "AI口语陪练 Analyst Agent 设计",
+      title: "BiliMind：把视频收藏夹变成可对话知识库",
       description:
-        "在时空壶实习中负责核心功能设计，提出“隐性纠错+显性报告”双层反馈机制，推动 Chat Agent 与 Analyst Agent 分层协同。",
-      image: "/images/studio-workspace.svg",
-      href: "https://example.com/project-1",
-    },
-    {
-      title: "多意图路径推荐策略优化",
-      description:
-        "在深圳交通规划设计中心实习期间，基于调研与A/B测试优化路径推荐策略，使路网平均通行速度提升 5%，平均出行时间缩短 8%。",
-      image: "/images/venture-workspace.svg",
-      href: "https://example.com/project-2",
-    },
-    {
-      title: "城市渣土车监控智能分析系统",
-      description:
-        "作为项目负责人，围绕海量视频噪声大、关键信息提取难的问题，推进训练数据优化与数据处理策略设计，提升模型在长尾场景的泛化能力。",
-      image: "/images/studio-workspace.svg",
-      href: "https://example.com/project-3",
+        "将收藏视频内容转成可检索、可追溯来源的个人知识库；支持 B站（扫码登录）与抖音（Cookie 登录，MVP）。",
+      details: [
+        "B站：扫码登录、读取收藏夹、内容提取（摘要/字幕/ASR 兜底）、向量入库与语义检索问答、默认收藏夹整理（预览/执行/清理失效）。",
+        "抖音（MVP）：Cookie 登录、拉取喜欢/收藏单分组视频、基于标题/简介入库、检索问答（来源链接跳转抖音）。",
+        "使用流程：登录 → 选择平台（B站扫码/抖音Cookie）→ 勾选分组 → 入库/更新 → 聊天区提问。",
+      ],
+      image: "/演示图片1.png",
+      href: "https://github.com/sysu19351015/bilibili-douyin-RAG",
     },
   ]
 
@@ -55,6 +46,12 @@ export function PortfolioSection() {
                 <p className="text-base md:text-[18px] text-[#393939] leading-relaxed md:leading-[30px] font-medium">
                   {project.description}
                 </p>
+
+                <ul className="mt-4 space-y-2 text-sm md:text-base text-[#393939] leading-relaxed list-disc pl-5">
+                  {project.details.map((detail, detailIndex) => (
+                    <li key={detailIndex}>{detail}</li>
+                  ))}
+                </ul>
               </div>
 
               <div className="relative overflow-hidden min-h-[250px] md:min-h-[500px] bg-[#F3F4F6]">
@@ -67,20 +64,6 @@ export function PortfolioSection() {
               </div>
             </a>
           ))}
-        </div>
-
-        <div className="flex justify-center">
-          <button className="bg-black text-white px-6 md:px-8 py-4 md:py-5 rounded-[12px] font-semibold hover:bg-gray-900 transition-colors flex items-center justify-center gap-2 w-full sm:w-auto text-sm md:text-base">
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-              />
-            </svg>
-            查看更多项目
-          </button>
         </div>
       </div>
     </section>

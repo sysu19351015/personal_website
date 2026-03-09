@@ -27,7 +27,7 @@ export function AboutSection() {
     },
     {
       title: "最近在玩",
-      content: "燕云十六shen",
+      content: "燕云十六声",
       icon: Gamepad2,
       dot: "bg-[#FF6B7A]",
       underline: "border-[#FF6B7A]",
@@ -50,28 +50,28 @@ export function AboutSection() {
   const gameProgress = [
     {
       track: "main",
-      name: "时空壶-AI产品实习",
-      brief: "AI口语陪练 Analyst Agent 设计",
-      date: "2025.05-2026.08",
-      full: "在 AI 产品实习中独立完成个人作品网站从信息结构、交互布局到视觉落地的全流程搭建，并持续迭代优化。",
+      name: "深圳时空壶技术有限公司",
+      brief: "产品经理实习生 | 用户研究与软件AI功能设计",
+      date: "2025.05 – 2025.08",
+      full: "背景：用户认识不足，无法有效指导产品迭代。会议、授课等场景下用户缺少快速获取历史翻译记录信息的途径。\n\n• 用户研究与洞察：基于JTBD理论，通过问卷调研、用户访谈和行为数据分析，将用户研究从「人群画像」深化为「场景意图」，挖掘场景下的代办任务。\n• 需求管理与规划：根据用户研究结论，主导翻译记录AI总结功能的需求挖掘与功能设计。撰写并交付PRD。\n• 用户反馈闭环与体验优化：主导「产品百科」模块优化，建立并维护VOC监控和竞品动态，上线后，模块月点击量提升1W+，功能平均满意度提升30%。\n• 项目管理与协作：跟进产品开发与交付进度，确保版本按时高质量交付。",
       icon: Flag,
       cardColor: "bg-[#2F81F7]",
     },
     {
       track: "side",
-      name: "个人项目",
-      date: "2024.06-2025.05",
-      brief: "搭建简历作品集框架并形成项目表达模板",
-      full: "完成简历信息结构化整理，输出可复用的项目展示模板，支持后续项目内容快速扩展与替换。",
+      name: "城市渣土车监管项目",
+      date: "2024.06 – 2025.05",
+      brief: "项目负责人 | 设计城市大脑智能分析系统",
+      full: "概述：城市治理中，针对海量视频数据处理效率低、噪音大、关键信息提取难等问题，设计城市大脑智能分析系统。\n\n• 训练数据优化：针对数据长尾场景下模型泛化能力差，通过案例分析，策略性应用多种方法扩充数据集。\n• 数据处理策略：发现数据不连续导致轨迹中断。创新性提出自然语言问题类比解决方案。\n• 数据处理模块：面对每日百万级的非结构化数据处理需求，设计并实施了分布式、多进程处理流水线。\n\n成果：识别准召率提升至90%以上，数据重建准确率达97%，支撑百万级数据并发处理，系统在多个城市落点试验。",
       icon: Target,
       cardColor: "bg-[#FF6B7A]",
     },
     {
       track: "main",
-      name: "交通研究中心",
-      date: "2022.07-2022.09",
-      brief: "通过A/B测试验证策略效果，路网平均通行速度提升5%",
-      full: "保送进入中山大学智能工程学院交通运输专业硕士阶段，系统深化数据分析与智能系统相关能力。",
+      name: "深圳交通研究中心",
+      date: "2022.07 – 2022.09",
+      brief: "产品实习生 | 基于动态奖励的路径推荐策略",
+      full: "背景：传统路径推荐算法，无法理解用户多样化意图（时间、POI等），向相同起终点的大量用户推荐同质化路径。\n\n• 需求分析：问卷调研、访谈，分析不同用户群体对路径选择的隐性需求与偏好，洞察路径时间确定性需求。\n• 策略优化与设计：借鉴排序思想，设计了基于动态奖励的路径推荐策略。通过激励机制引导用户。\n• 数据驱动迭代：通过A/B测试验证策略效果，路网平均通行速度提升5%，用户平均出行时间缩短8%。",
       icon: Flag,
       cardColor: "bg-[#22C55E]",
     },
@@ -94,6 +94,42 @@ export function AboutSection() {
 
     return () => clearTimeout(timeout)
   }, [activeSlogan, typedText, slogans])
+
+  const renderProgressDetail = (text: string, textSizeClass: string) => {
+    return (
+      <div className={`mt-2 leading-relaxed text-[#3f3f3f] ${textSizeClass}`}>
+        {text.split("\n").map((line, lineIndex) => {
+          const trimmedLine = line.trim()
+
+          if (!trimmedLine) {
+            return <div key={lineIndex} className="h-2" />
+          }
+
+          if (trimmedLine.startsWith("•")) {
+            return (
+              <p key={lineIndex} className="pl-4 -indent-3 mb-1.5">
+                {trimmedLine}
+              </p>
+            )
+          }
+
+          if (trimmedLine.startsWith("成果：")) {
+            return (
+              <p key={lineIndex} className="font-semibold mt-1.5">
+                {trimmedLine}
+              </p>
+            )
+          }
+
+          return (
+            <p key={lineIndex} className="mb-1.5">
+              {trimmedLine}
+            </p>
+          )
+        })}
+      </div>
+    )
+  }
 
   return (
     <section className="container mx-auto px-4 py-16 md:py-32">
@@ -172,7 +208,7 @@ export function AboutSection() {
               </span>
             </h2>
             <p className="text-gray-600 text-base md:text-lg leading-relaxed">
-              中山大学智能工程学院交通运输硕士（保送），本科交通工程专业。具备用户研究、需求分析、
+              中山大学智能工程学院交通运输硕士（保送）。具备用户研究、需求分析、
               Agent 设计与数据分析能力，能够推动项目从 0 到 1 落地。
             </p>
           </div>
@@ -183,8 +219,8 @@ export function AboutSection() {
               <div>
                 <h3 className="text-lg md:text-xl font-bold mb-2">工具与方法能力</h3>
                 <p className="text-gray-600 text-sm md:text-base">
-                  熟悉 Axure、Figma，掌握 Python、SQL、Excel；熟悉 Prompt Engineering、
-                  用户研究方法及 Coze 工作流。
+                  熟悉 Axure、Figma，掌握 Python、SQL、Excel数据分析；掌握用户研究方法、Prompt Engineering
+                  及AI工作流。
                 </p>
               </div>
             </div>
@@ -194,8 +230,8 @@ export function AboutSection() {
               <div>
                 <h3 className="text-lg md:text-xl font-bold mb-2">学习与项目能力</h3>
                 <p className="text-gray-600 text-sm md:text-base">
-                  深度关注 AIGC、RAG、Agent 技术，具备敏捷协作经验；曾获优秀学生奖学金、
-                  研究生一等学院奖助金及美赛 H 奖。
+                  深度关注 AIGC、Agent 等AI相关技术，具备敏捷协作经验；曾获优秀学生奖学金、
+                  学院奖助金及美国大学生数学建模竞赛 H 奖。
                 </p>
               </div>
             </div>
@@ -361,7 +397,7 @@ export function AboutSection() {
                             </div>
                             <p className="text-base md:text-lg font-bold leading-snug">{item.date}</p>
                             <p className="text-base md:text-lg font-bold leading-snug">{item.brief}</p>
-                            {isExpanded && <p className="text-sm md:text-base text-[#3f3f3f] mt-2 leading-relaxed">{item.full}</p>}
+                            {isExpanded && renderProgressDetail(item.full, "text-sm md:text-base")}
                           </div>
                         </div>
                       </button>
@@ -392,7 +428,7 @@ export function AboutSection() {
                                 </div>
                                 <p className="text-lg font-bold leading-snug">{item.date}</p>
                                 <p className="text-lg font-bold leading-snug">{item.brief}</p>
-                                {isExpanded && <p className="text-base text-[#3f3f3f] mt-2 leading-relaxed">{item.full}</p>}
+                                {isExpanded && renderProgressDetail(item.full, "text-base")}
                               </div>
                             </div>
                           </button>
@@ -426,7 +462,7 @@ export function AboutSection() {
                                 </div>
                                 <p className="text-lg font-bold leading-snug">{item.date}</p>
                                 <p className="text-lg font-bold leading-snug">{item.brief}</p>
-                                {isExpanded && <p className="text-base text-[#3f3f3f] mt-2 leading-relaxed">{item.full}</p>}
+                                {isExpanded && renderProgressDetail(item.full, "text-base")}
                               </div>
                             </div>
                           </button>
