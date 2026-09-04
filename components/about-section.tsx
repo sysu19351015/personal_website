@@ -132,63 +132,63 @@ export function AboutSection() {
   }
 
   return (
-    <section className="container mx-auto px-4 py-16 md:py-32">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+    <section className="container mx-auto px-5 py-10 sm:px-6 sm:py-16 lg:py-28">
+      <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2 lg:gap-16">
         <div className="flex justify-center">
-          <div className="relative w-full max-w-lg border-[4px] border-black rounded-3xl bg-white p-4 md:p-5 shadow-[-8px_8px_0px_0px_rgba(0,0,0,1)] rotate-[-2deg] transition-transform duration-300 hover:rotate-[-6deg]">
+          <div className="relative w-[calc(100%_-_1rem)] max-w-lg rotate-[-1deg] rounded-3xl border-[4px] border-black bg-white p-3 shadow-[-5px_5px_0px_0px_rgba(0,0,0,1)] transition-transform duration-300 sm:w-full sm:p-4 md:p-5 md:rotate-[-2deg] md:shadow-[-8px_8px_0px_0px_rgba(0,0,0,1)] lg:hover:rotate-[-6deg]">
             <div className="relative border-[3px] border-black rounded-2xl overflow-hidden bg-white">
-              <div className="bg-[#4ADE80] border-b-[3px] border-black px-4 py-3 pr-24">
-                <p className="text-3xl md:text-4xl font-black leading-none">ID CARD</p>
-                <p className="text-sm md:text-base font-bold tracking-wide mt-1">PERSONAL PORTFOLIO</p>
+              <div className="border-b-[3px] border-black bg-[#4ADE80] px-3 py-3 pr-20 sm:px-4 sm:pr-24">
+                <p className="text-2xl font-black leading-none sm:text-3xl md:text-4xl">ID CARD</p>
+                <p className="mt-1 text-[10px] font-bold tracking-wide sm:text-sm md:text-base">PERSONAL PORTFOLIO</p>
               </div>
 
-              <div className="absolute top-3 right-3 w-20 h-20 md:w-24 md:h-24 rounded-full border-[4px] border-black bg-[#FF6BBD] flex items-center justify-center overflow-visible">
-                <span className="text-5xl md:text-6xl leading-none translate-y-[-2px]">☺</span>
+              <div className="absolute top-3 right-3 w-14 h-14 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full border-[4px] border-black bg-[#FF6BBD] flex items-center justify-center overflow-visible">
+                <span className="text-4xl sm:text-5xl md:text-6xl leading-none translate-y-[-2px]">☺</span>
               </div>
 
-              <div className="p-4 md:p-5 space-y-4">
-                <div className="grid grid-cols-[1fr_1.35fr] gap-3 md:gap-4 items-start">
+              <div className="space-y-4 p-3 sm:p-4 md:p-5">
+                <div className="grid grid-cols-[minmax(0,1fr)_minmax(0,1.35fr)] items-start gap-2 sm:gap-3 md:gap-4">
                   <div>
                     <div className="aspect-[3/4] rounded-2xl border-[4px] border-black bg-[#F3F0E9] overflow-hidden">
                       <img src="/person-picture.png" alt="陈泽头像" className="w-full h-full object-cover object-center scale-[1.06]" />
                     </div>
-                    <div className="mt-2 flex gap-2">
-                      <span className="px-2 py-1 text-xs md:text-sm font-black bg-[#60A5FA] border-[3px] border-black rounded-xl">1999.12.8</span>
-                      <span className="px-2 py-1 text-xs md:text-sm font-black bg-[#F472B6] border-[3px] border-black rounded-xl">深圳</span>
+                    <div className="mt-2 flex flex-wrap gap-1.5 sm:gap-2">
+                      <span className="rounded-xl border-[3px] border-black bg-[#60A5FA] px-1.5 py-1 text-[10px] font-black sm:px-2 sm:text-xs md:text-sm">1999.12.8</span>
+                      <span className="rounded-xl border-[3px] border-black bg-[#F472B6] px-1.5 py-1 text-[10px] font-black sm:px-2 sm:text-xs md:text-sm">深圳</span>
                     </div>
                   </div>
 
-                  <div className="space-y-3">
-                    <div className="rounded-2xl border-[4px] border-black bg-[#FDE047] px-3 py-2">
+                  <div className="min-w-0 space-y-2 sm:space-y-3">
+                    <div className="min-w-0 rounded-2xl border-[4px] border-black bg-[#FDE047] px-2 py-2 sm:px-3">
                       <p className="text-xs md:text-sm font-bold text-gray-700">NAME</p>
-                      <p className="text-3xl md:text-4xl font-black leading-none mt-1">陈泽</p>
+                      <p className="mt-1 text-2xl font-black leading-none sm:text-3xl md:text-4xl">陈泽</p>
                     </div>
-                    <div className="rounded-2xl border-[4px] border-black bg-[#DBEAFE] px-3 py-2">
+                    <div className="min-w-0 rounded-2xl border-[4px] border-black bg-[#DBEAFE] px-2 py-2 sm:px-3">
                       <p className="text-xs md:text-sm font-bold text-gray-700">COLLEGE</p>
-                      <p className="text-2xl md:text-3xl font-black leading-tight mt-1">智能工程学院</p>
+                      <p className="mt-1 break-words text-lg font-black leading-tight sm:text-xl md:text-3xl">智能工程学院</p>
                     </div>
-                    <div className="rounded-2xl border-[4px] border-black bg-[#E9D5FF] px-3 py-2">
+                    <div className="min-w-0 rounded-2xl border-[4px] border-black bg-[#E9D5FF] px-2 py-2 sm:px-3">
                       <p className="text-xs md:text-sm font-bold text-gray-700">ROLE</p>
-                      <p className="text-2xl md:text-3xl font-black leading-tight mt-1">AI产品经理</p>
+                      <p className="mt-1 break-words text-lg font-black leading-tight sm:text-xl md:text-3xl">AI产品经理</p>
                     </div>
                   </div>
                 </div>
 
                 <div className="space-y-2">
                   <p className="text-xs md:text-sm font-bold tracking-wide">ID NO.</p>
-                  <p className="text-3xl md:text-4xl font-black leading-none">CZ-19991208-PM</p>
+                  <p className="break-all text-xl font-black leading-none sm:text-2xl md:text-4xl">CZ-19991208-PM</p>
                 </div>
 
-                <div className="flex items-end justify-between gap-4">
+                <div className="flex min-w-0 items-end justify-between gap-2 sm:gap-4">
                   <div className="flex-1 rounded-2xl border-[4px] border-black bg-white px-3 py-4">
                     <div className="h-10 rounded-lg border-[3px] border-black bg-white px-2 flex items-center justify-center overflow-hidden">
-                      <span className="font-black uppercase tracking-wide leading-none whitespace-nowrap text-[clamp(0.58rem,1.8vw,1rem)]">
+                      <span className="whitespace-nowrap text-[clamp(0.48rem,2.3vw,1rem)] font-black uppercase leading-none tracking-wide">
                         something for nothing
                       </span>
                     </div>
                   </div>
-                  <div className="w-20 h-20 md:w-24 md:h-24 rounded-full border-[4px] border-black bg-[#FB7185] flex items-center justify-center rotate-[10deg]">
-                    <span className="w-14 h-14 md:w-16 md:h-16 rounded-full border-[3px] border-black bg-[#86EFAC] flex items-center justify-center text-[10px] md:text-xs font-black text-center leading-tight">
+                  <div className="flex h-16 w-16 flex-shrink-0 rotate-[10deg] items-center justify-center rounded-full border-[4px] border-black bg-[#FB7185] sm:h-20 sm:w-20 md:h-24 md:w-24">
+                    <span className="flex h-11 w-11 items-center justify-center rounded-full border-[3px] border-black bg-[#86EFAC] text-center text-[8px] font-black leading-tight sm:h-14 sm:w-14 sm:text-[10px] md:h-16 md:w-16 md:text-xs">
                       OFFICIAL
                       <br />
                       CREATIVE
@@ -200,9 +200,9 @@ export function AboutSection() {
           </div>
         </div>
 
-        <div className="space-y-6 md:space-y-8">
+        <div className="min-w-0 space-y-6 md:space-y-8">
           <div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+            <h2 className="mb-4 max-w-full break-words text-3xl font-bold md:text-4xl lg:text-5xl">
               <span className="bg-[#2F81F7] text-white px-3 py-1 inline-block rotate-[-2deg] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-transform duration-300 hover:rotate-[-6deg]">
                 教育与能力概览
               </span>
@@ -247,7 +247,7 @@ export function AboutSection() {
       </div>
 
       <div className="max-w-7xl mx-auto mt-20 md:mt-28 flex justify-center">
-        <div className="relative w-full max-w-5xl border-[4px] border-black bg-[#FFC224] rounded-sm px-8 py-6 md:px-10 md:py-8 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] text-center">
+        <div className="relative w-full max-w-5xl rounded-sm border-[4px] border-black bg-[#FFC224] px-4 py-6 text-center shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] sm:px-8 md:px-10 md:py-8 md:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
           <div className="absolute -top-4 left-6 bg-white border-[3px] border-black px-3 py-1 text-sm md:text-base font-bold uppercase tracking-wide">
             words
           </div>
@@ -347,10 +347,10 @@ export function AboutSection() {
         </div>
       </div>
 
-      <div className="w-[80%] max-w-7xl mx-auto mt-20 md:mt-24">
-        <h3 className="text-2xl md:text-4xl font-black text-center mb-8 md:mb-10">
+      <div className="mx-auto mt-20 w-full max-w-7xl md:mt-24">
+        <h3 className="mb-8 text-center text-2xl font-black leading-relaxed md:mb-10 md:text-4xl">
           地球Online
-          <span className="inline-block ml-2 bg-[#FF6B7A] px-3 py-1 border-[3px] border-black rotate-[-2deg] shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] transition-transform duration-300 hover:rotate-[-7deg]">
+          <span className="mt-2 block rotate-[-2deg] border-[3px] border-black bg-[#FF6B7A] px-3 py-1 shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] transition-transform duration-300 hover:rotate-[-7deg] sm:ml-2 sm:mt-0 sm:inline-block">
             开放游戏进度
           </span>
         </h3>
@@ -424,7 +424,7 @@ export function AboutSection() {
                               <div className="min-w-0 flex-1">
                                 <div className="flex items-center gap-2 mb-1.5">
                                   <span className="inline-block bg-black text-white text-sm font-bold px-1.5 py-0.5 rounded-[5px] leading-none">[实习]</span>
-                                  <span className="text-[30px] leading-none md:text-3xl font-black">{item.name}</span>
+                                  <span className="break-words text-xl font-black leading-tight lg:text-2xl">{item.name}</span>
                                 </div>
                                 <p className="text-lg font-bold leading-snug">{item.date}</p>
                                 <p className="text-lg font-bold leading-snug">{item.brief}</p>
@@ -458,7 +458,7 @@ export function AboutSection() {
                               <div className="min-w-0 flex-1">
                                 <div className="flex items-center gap-2 mb-1.5">
                                   <span className="inline-block bg-black text-white text-sm font-bold px-1.5 py-0.5 rounded-[5px] leading-none">[项目]</span>
-                                  <span className="text-[30px] leading-none md:text-3xl font-black">{item.name}</span>
+                                  <span className="break-words text-xl font-black leading-tight lg:text-2xl">{item.name}</span>
                                 </div>
                                 <p className="text-lg font-bold leading-snug">{item.date}</p>
                                 <p className="text-lg font-bold leading-snug">{item.brief}</p>

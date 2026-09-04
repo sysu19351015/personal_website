@@ -17,15 +17,15 @@ export function PortfolioSection() {
   ]
 
   return (
-    <section className="container mx-auto px-4 py-16 md:py-24">
+    <section className="container mx-auto px-5 py-10 sm:px-6 sm:py-16 md:py-24">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-            我的
-            <span className="mx-2 bg-[#FFC224] text-black px-3 py-1 inline-block border-[3px] border-black rotate-[-2deg] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-transform duration-300 hover:rotate-[-7deg]">
+          <h2 className="mb-4 flex flex-wrap items-center justify-center gap-x-2 gap-y-3 text-3xl font-bold md:text-4xl lg:text-5xl">
+            <span>我的</span>
+            <span className="inline-block rotate-[-2deg] border-[3px] border-black bg-[#FFC224] px-3 py-1 text-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-transform duration-300 hover:rotate-[-7deg]">
               AIcoding
             </span>
-            作品
+            <span>作品</span>
           </h2>
         </div>
 
@@ -36,30 +36,30 @@ export function PortfolioSection() {
               href={project.href}
               target="_blank"
               rel="noreferrer"
-              className="group grid md:grid-cols-2 bg-white border-[3px] border-black rounded-[32px] overflow-hidden hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition-all"
+              className="group grid min-w-0 overflow-hidden rounded-3xl border-[3px] border-black bg-white transition-all hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] md:grid-cols-2 md:rounded-[32px]"
             >
-              <div className="p-6 md:p-12 flex flex-col justify-center bg-white">
-                <h3 className="text-xl md:text-[28px] font-bold mb-4 leading-tight md:leading-[40px] text-[#0B0B0B]">
+              <div className="flex min-w-0 flex-col justify-center bg-white p-5 sm:p-6 md:p-10 lg:p-12">
+                <h3 className="mb-4 break-words text-xl font-bold leading-tight text-[#0B0B0B] md:text-[28px] md:leading-[40px]">
                   {project.title}
                 </h3>
 
-                <p className="text-base md:text-[18px] text-[#393939] leading-relaxed md:leading-[30px] font-medium">
+                <p className="break-words text-base font-medium leading-relaxed text-[#393939] md:text-[18px] md:leading-[30px]">
                   {project.description}
                 </p>
 
-                <ul className="mt-4 space-y-2 text-sm md:text-base text-[#393939] leading-relaxed list-disc pl-5">
+                <ul className="mt-4 list-disc space-y-2 break-words pl-5 text-sm leading-relaxed text-[#393939] md:text-base">
                   {project.details.map((detail, detailIndex) => (
                     <li key={detailIndex}>{detail}</li>
                   ))}
                 </ul>
               </div>
 
-              <div className="relative overflow-hidden min-h-[250px] md:min-h-[500px] bg-[#F3F4F6]">
+              <div className="relative min-h-[220px] overflow-hidden bg-[#F3F4F6] sm:min-h-[300px] md:min-h-[480px]">
                 <Image
                   src={project.image || "/placeholder.svg"}
                   alt={project.title}
                   fill
-                  className="object-cover transition-transform duration-500 ease-out group-hover:scale-110"
+                  className="object-contain p-3 transition-transform duration-500 ease-out group-hover:scale-[1.02] md:p-6"
                 />
               </div>
             </a>

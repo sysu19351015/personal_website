@@ -19,8 +19,8 @@ const onest = Onest({
 })
 
 export const metadata: Metadata = {
-  title: "Paperfolio - Portfolio Landing Page",
-  description: "A playful portfolio landing page",
+  title: "陈泽｜AI 产品经理",
+  description: "陈泽的个人主页、经历介绍与 AI 产品作品集。",
   generator: "v0.app",
 }
 
@@ -30,8 +30,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body className={`${onest.variable} font-sans antialiased overflow-x-hidden`}>{children}</body>
+    <html lang="zh-CN">
+      <body className={`${onest.variable} min-w-0 overflow-x-hidden font-sans antialiased`}>{children}</body>
     </html>
   )
 }
