@@ -390,7 +390,7 @@ export function AboutSection() {
                           </span>
                           <div className="min-w-0 flex-1">
                             <div className="flex items-center gap-2 mb-1.5">
-                              <span className="inline-block bg-black text-white text-xs md:text-sm font-bold px-1.5 py-0.5 rounded-[5px] leading-none">
+                              <span className="inline-block shrink-0 whitespace-nowrap bg-black text-white text-xs md:text-sm font-bold px-1.5 py-0.5 rounded-[5px] leading-none">
                                 {isLeft ? "[实习]" : "[项目]"}
                               </span>
                               <span className="text-base md:text-xl font-black">{item.name}</span>
@@ -423,7 +423,7 @@ export function AboutSection() {
                               </span>
                               <div className="min-w-0 flex-1">
                                 <div className="flex items-center gap-2 mb-1.5">
-                                  <span className="inline-block bg-black text-white text-sm font-bold px-1.5 py-0.5 rounded-[5px] leading-none">[实习]</span>
+                                  <span className="inline-block shrink-0 whitespace-nowrap bg-black text-white text-sm font-bold px-1.5 py-0.5 rounded-[5px] leading-none">[实习]</span>
                                   <span className="break-words text-xl font-black leading-tight lg:text-2xl">{item.name}</span>
                                 </div>
                                 <p className="text-lg font-bold leading-snug">{item.date}</p>
@@ -457,7 +457,7 @@ export function AboutSection() {
                               </span>
                               <div className="min-w-0 flex-1">
                                 <div className="flex items-center gap-2 mb-1.5">
-                                  <span className="inline-block bg-black text-white text-sm font-bold px-1.5 py-0.5 rounded-[5px] leading-none">[项目]</span>
+                                  <span className="inline-block shrink-0 whitespace-nowrap bg-black text-white text-sm font-bold px-1.5 py-0.5 rounded-[5px] leading-none">[项目]</span>
                                   <span className="break-words text-xl font-black leading-tight lg:text-2xl">{item.name}</span>
                                 </div>
                                 <p className="text-lg font-bold leading-snug">{item.date}</p>
