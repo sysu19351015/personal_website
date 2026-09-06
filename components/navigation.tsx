@@ -36,7 +36,7 @@ export function Navigation() {
         </div>
 
         <Button asChild className="col-start-3 h-11 min-w-11 flex-shrink-0 rounded-sm bg-black px-3 text-white hover:bg-black/90 sm:h-12 sm:px-5">
-          <a href="mailto:chenz9@mail2.sysu.edu.cn" aria-label="邮件联系陈泽">
+          <a href="mailto:ricardo@example.com" aria-label="邮件联系李嘉图">
             <Mail className="h-6 w-6" strokeWidth={2.5} />
           </a>
         </Button>

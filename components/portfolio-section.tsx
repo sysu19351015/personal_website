@@ -12,7 +12,7 @@ export function PortfolioSection() {
         "使用流程：登录 → 选择平台（B站扫码/抖音Cookie）→ 勾选分组 → 入库/更新 → 聊天区提问。",
       ],
       image: "/演示图片1.png",
-      href: "https://github.com/sysu19351015/bilibili-douyin-RAG",
+      href: "https://example.com/projects/bilibili-douyin-RAG",
     },
   ]
 

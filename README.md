@@ -1,77 +1,94 @@
-# 个人网站（Next.js）
+# 李嘉图 · AI 产品作品集
 
-这是一个基于 Next.js App Router 构建的个人网站项目，包含首页、关于我、作品集三个独立页面。  
-整体风格为高对比、黑边框、贴纸感与卡片化布局，适合用于个人简历展示与项目作品呈现。
+一个用 AI 辅助开发的个人网站，记录产品思考、近期生活与 AI 项目实践。采用黑色描边、明亮配色和贴纸卡片风格，支持桌面与手机浏览。
 
-## 页面结构
+![首页预览](docs/images/homepage.png)
 
-- `/`：首页（个人主视觉与身份介绍）
-- `/about`：关于我（教育背景、近期动态、成长轨迹等）
-- `/portfolio`：作品页（作品图片、名称、简述与跳转链接）
+## 页面与交互
+
+| 页面 | 内容 |
+| --- | --- |
+| 首页 `/` | 个人介绍、黑猫头像、关于我与作品入口 |
+| 关于我 `/about` | 身份卡、能力介绍、轮播文字、近日生活、可展开的经历时间线 |
+| 作品 `/portfolio` | 项目介绍、功能说明、演示图片与项目链接 |
+
+近日生活卡片包含可点击的翻书插画、手柄反馈和悬停时流动的 AI 节点连线。卡片支持键盘操作，并适配系统的减少动态效果偏好。
 
 ## 技术栈
 
-- Next.js 15（App Router）
-- React 19 + TypeScript
-- Tailwind CSS 4
-- Lucide React 图标
+- **Next.js 15.5.9**：App Router 与本地开发热更新。
+- **React 19.1 + TypeScript**：页面组件与交互逻辑。
+- **Tailwind CSS 4 + CSS Modules**：响应式布局与局部动画。
+- **Lucide React + Radix UI**：图标与基础 UI 组件。
 
-## 本地运行
+## 本地启动
 
-### 1) 安装依赖
-
-```bash
-npm install
-```
-
-### 2) 启动开发环境
+准备 Node.js 与 npm，在项目目录运行：
 
 ```bash
+npm ci --legacy-peer-deps
 npm run dev
 ```
 
-默认访问地址：`http://localhost:3000`
+打开 [http://localhost:3000](http://localhost:3000)。保存源码后，开发预览会自动更新。
 
-### 3) 生产构建与启动
+当前依赖包含与 React 19 的 peer dependency 声明不一致的旧组件，因此安装时使用 `--legacy-peer-deps`。仓库保留了两份包管理器锁文件，此处统一按 `package-lock.json` 和 npm 启动。
+
+## 修改内容从哪里开始
+
+| 想修改的内容 | 文件 |
+| --- | --- |
+| 首页姓名、自我介绍与头像 | [`components/hero-section.tsx`](components/hero-section.tsx) |
+| 身份卡、能力介绍、近日生活内容与经历 | [`components/about-section.tsx`](components/about-section.tsx) |
+| 生活卡片插画和点击交互 | [`components/recent-updates.tsx`](components/recent-updates.tsx) |
+| 生活卡片颜色、间距和动画 | [`components/recent-updates.module.css`](components/recent-updates.module.css) |
+| 作品名称、描述、图片和链接 | [`components/portfolio-section.tsx`](components/portfolio-section.tsx) |
+| 导航菜单和邮件联系入口 | [`components/navigation.tsx`](components/navigation.tsx) |
+| 浏览器标题、网站描述与字体 | [`app/layout.tsx`](app/layout.tsx) |
+| 全局颜色与基础样式 | [`app/globals.css`](app/globals.css) |
+
+`about-section.tsx` 中的三个数组对应不同区域：
+
+- `slogans`：轮播文字。
+- `recentUpdates`：最近在读、在玩、学习；修改 `title`、`content` 或 `href`。
+- `gameProgress`：经历时间线；`full` 为点击展开后的详细内容。
+
+图片放在 `public/` 中，在组件里使用 `/图片名.png` 引用。例如，首页与关于页共用 `/cat-avatar.png`。
+
+当前联系邮箱与作品外链使用 `example.com` 示例地址。正式使用时，请分别修改导航、关于页的邮箱，以及作品数组中的 `href`。
+
+## 项目结构
+
+```text
+app/                         路由、页面入口与全局样式
+components/                  页面内容与交互组件
+  ui/                        基础 UI 组件
+lib/                         公共工具函数
+public/                      网页可公开访问的图片和素材
+docs/images/homepage.png     README 首页截图
+```
+
+## 检查与构建
 
 ```bash
+# TypeScript 检查
+npx tsc --noEmit --incremental false
+
+# 生产构建
 npm run build
+
+# 启动生产版本（先完成构建）
 npm run start
 ```
 
-## 常用脚本
+构建会通过 `next/font/google` 获取字体，需要可用的网络连接。当前 Next.js 配置会跳过构建时的 TypeScript 和 ESLint 检查，请单独运行上面的类型检查。`lint` 脚本尚缺少 ESLint 依赖与配置，需要补齐后使用。
 
-- `npm run dev`：开发模式
-- `npm run build`：生产构建
-- `npm run start`：运行生产构建
-- `npm run lint`：代码检查
+## 部署
 
-## 自定义指南
+在支持 Next.js 的托管平台导入仓库，安装命令设为 `npm ci --legacy-peer-deps`，构建命令设为 `npm run build`。自托管时，构建后运行 `npm run start`。
 
-你通常只需要修改以下文件：
+首页截图保存在 `docs/images/`，更换首页设计后可更新同名图片，README 会使用新的截图。
 
-- `components/hero-section.tsx`：首页文案与主视觉
-- `components/about-section.tsx`：关于页内容与模块样式
-- `components/portfolio-section.tsx`：作品列表（图片、标题、简介、跳转链接）
-- `components/navigation.tsx`：导航菜单与路由入口
+## 素材说明
 
-### 作品数据修改示例
-
-在 `components/portfolio-section.tsx` 中维护作品数组，可直接替换：
-
-- `title`：作品名称
-- `description`：作品简述
-- `image`：作品图片路径（建议放在 `public/images/`）
-- `href`：点击卡片跳转地址
-
-## 部署建议
-
-可部署到 Vercel、Netlify 或自托管环境。以 Vercel 为例：
-
-1. 将仓库推送到 GitHub
-2. 在 Vercel 导入该仓库
-3. 保持默认构建命令（`npm run build`）并部署
-
-## 许可证
-
-仅用于个人展示与学习参考。如需商用，请自行检查素材与图片版权。
+页面展示名借用《龙族》角色“李嘉图”，用于个人作品展示。仓库暂未提供开源许可证；复用代码、角色元素或图片前，请确认相应授权。

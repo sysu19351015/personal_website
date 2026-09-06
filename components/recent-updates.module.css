@@ -1,0 +1,69 @@
+.section { max-width: 80rem; margin: 5rem auto 0; }
+.header { display: flex; align-items: center; gap: 24px; margin: 0 8px 30px; }
+.header h3 { position: relative; padding: 12px 19px; border: 3px solid #111; border-radius: 12px; background: #ff6b7a; box-shadow: 4px 5px 0 #111; transform: rotate(-2deg); font-size: 19px; font-weight: 900; }
+.header h3::after { content: ""; position: absolute; width: 49px; height: 15px; background: #ffeaa9d9; border: 1px solid #1113; top: -10px; left: 22px; transform: rotate(-12deg); }
+.headerDoodle { display: flex; flex: 1; align-items: center; gap: 16px; color: #111; }
+.headerDoodle span { border-top: 2px dashed #1114; flex: 1; }
+.board { position: relative; padding: 30px 25px 35px; border: 2px solid #e3e0d8; border-radius: 26px; background-color: #faf8f1; background-image: radial-gradient(#d4d0c5 1px, transparent 1px); background-size: 18px 18px; }
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px; align-items: stretch; }
+.card { --accent: #2f81f7; --wash: #edf4ff; position: relative; display: flex; flex-direction: column; min-width: 0; width: 100%; color: #111; background: #fff; padding: 18px 18px 16px; border: 3px solid #111; border-radius: 18px; text-align: left; box-shadow: 5px 6px 0 var(--accent), 6px 7px 0 1px #111; transform: rotate(-1deg); transition: transform .24s ease, box-shadow .24s ease; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.playing { --accent: #ff6b7a; --wash: #fff0f1; transform: rotate(1deg); }
+.learning { --accent: #22c55e; --wash: #eaf9ef; transform: rotate(-.7deg); }
+.card:focus-visible { outline: 3px solid #111; outline-offset: 9px; transform: translateY(-7px); }
+.card:active { transform: translate(3px, 3px); box-shadow: 2px 3px 0 var(--accent), 3px 4px 0 1px #111; }
+.cardTop { display: flex; align-items: center; gap: 10px; }
+.icon { display: grid; place-items: center; width: 39px; height: 39px; flex-shrink: 0; border: 2px solid #111; border-radius: 12px; background: var(--accent); }
+.title { font-size: 17px; font-weight: 800; }
+.number { margin-left: auto; font-size: 12px; font-family: monospace; letter-spacing: .1em; color: #666; border-bottom: 2px solid var(--accent); }
+.scene { position: relative; margin: 18px 0 22px; border: 2px solid #111; border-radius: 12px; background: var(--wash); }
+.illustration { display: block; width: 100%; height: auto; }
+.tape { position: absolute; left: 50%; bottom: -8px; width: 52px; height: 16px; transform: translateX(-50%) rotate(-6deg); background: #ffe9a8d9; border: 1px solid #1112; }
+.cardBottom { display: flex; align-items: flex-start; gap: 12px; }
+.cardBottom p { margin: 0; flex: 1; font-size: 18px; font-weight: 750; line-height: 1.65; overflow-wrap: anywhere; text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 3px; text-underline-offset: 7px; }
+.action { display: grid; place-items: center; width: 33px; height: 33px; flex-shrink: 0; border: 2px solid #111; border-radius: 50%; background: var(--wash); transition: transform .25s ease, background .25s ease; }
+.linkLabel { display: inline-flex; gap: 5px; align-items: center; margin-top: 16px; font-size: 12px; font-weight: 700; }
+.page { transform-origin: 156px 85px; transition: transform .65s cubic-bezier(.2,.65,.25,1); }
+.pageTurned { transform: skewY(9deg) scaleX(-.95); }
+.book, .game, .network { transform-origin: center; transition: transform .35s ease; }
+.gamePulse { transform-origin: 160px 95px; animation: recent-game .55s ease; }
+.gamePulse .gameButton { animation: recent-button .55s ease; }
+.gamePulse .gameStar { transform-origin: 46px 81px; animation: recent-star .55s ease; }
+.signal { animation: recent-signal 2s linear infinite; animation-play-state: paused; }
+.learning:focus-visible .signal { animation-play-state: running; }
+@media (hover: hover) {
+  .card:hover { transform: translateY(-8px) rotate(0); box-shadow: 7px 11px 0 var(--accent), 8px 12px 0 1px #111; }
+  .card:hover .action { transform: rotate(-12deg); background: var(--accent); }
+  .card:hover .book { transform: translateY(-3px) rotate(-3deg); }
+  .card:hover .game { transform: translateY(-3px) rotate(4deg); }
+  .card:hover .network { transform: translateY(-3px); }
+  .card:hover .signal { animation-play-state: running; }
+}
+@keyframes recent-game { 0%, 100% { transform: rotate(0); } 25% { transform: rotate(-7deg) translateY(-4px); } 65% { transform: rotate(6deg); } }
+@keyframes recent-button { 40% { fill: #fff; } }
+@keyframes recent-star { 50% { transform: scale(1.35) rotate(25deg); } }
+@keyframes recent-signal { to { stroke-dashoffset: -44; } }
+@media (max-width: 1023px) and (min-width: 768px) {
+  .grid { gap: 17px; }
+  .board { padding: 24px 17px 30px; }
+  .card { padding: 13px 11px 16px; }
+  .cardTop { gap: 7px; }
+  .title { font-size: 15px; }
+  .cardBottom p { font-size: 16px; }
+  .action { width: 28px; height: 28px; }
+}
+@media (max-width: 767px) {
+  .section { margin-top: 3.5rem; }
+  .header { gap: 12px; margin: 0 4px 26px; }
+  .header h3 { font-size: 15px; padding: 11px 12px; }
+  .header h3 span { font-size: 11px; }
+  .headerDoodle span { display: none; }
+  .headerDoodle { flex: 0; }
+  .board { padding: 23px 16px 29px; border-radius: 21px; }
+  .grid { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .card { padding: 16px; }
+  .scene { margin-top: 16px; }
+  .illustration { max-height: 190px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .section *, .section *::before, .section *::after { animation: none !important; transition: none !important; }
+}

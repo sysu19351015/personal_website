@@ -12,7 +12,7 @@ export function HeroSection() {
             <span className="block">
               我是
               <span className="bg-[#FF6B7A] text-white px-3 py-1 inline-block ml-2 rotate-[-2deg] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-transform duration-300 hover:rotate-[-6deg]">
-                陈泽
+                李嘉图
               </span>
               ，
             </span>
@@ -56,8 +56,8 @@ export function HeroSection() {
         <div className="flex min-w-0 justify-center lg:justify-end">
           <div className="relative aspect-square w-full max-w-sm overflow-hidden rounded-3xl border-4 border-black bg-[#FDB927] shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] sm:max-w-md sm:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
             <Image
-              src="/person-picture.png"
-              alt="陈泽个人头像"
+              src="/cat-avatar.png"
+              alt="李嘉图个人头像"
               fill
               className="object-cover scale-[1.12] object-[center_20%]"
             />

@@ -9,3 +9,5 @@ node_modules/
 .npm-cache/
 .env*.local
 .DS_Store
+# Local reference originals (not published)
+.private-assets/

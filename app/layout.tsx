@@ -19,8 +19,8 @@ const onest = Onest({
 })
 
 export const metadata: Metadata = {
-  title: "陈泽｜AI 产品经理",
-  description: "陈泽的个人主页、经历介绍与 AI 产品作品集。",
+  title: "李嘉图｜AI 产品经理",
+  description: "李嘉图的个人主页、经历介绍与 AI 产品作品集。",
   generator: "v0.app",
 }
 
